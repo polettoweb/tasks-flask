@@ -11,6 +11,12 @@
     <div class="form">
         <form action="/update/{{task.id}}" method="POST">
             <input type="text" name="content" id="content" value="{{task.content}}">
+            <select title="status" name="status" id="status">
+                    <option value="todo" {% if task.status=="todo" %} selected="selected"{% endif %}>To Do</option>
+                    <option value="todolater" {% if task.status=="todolater" %} selected="selected"{% endif %}>To Do Later</option>
+                    <option value="inprogress" {% if task.status=="inprogress" %} selected="selected"{% endif %}>In Progress</option>
+                    <option value="done" {% if task.status=="done" %} selected="selected"{% endif %}>done</option>
+                </select>
             <input type="submit" value="Update">
         </form>
     </div>

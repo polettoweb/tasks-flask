@@ -54,6 +54,7 @@ def update(id):
 
     if request.method == 'POST':
         task.content = request.form['content']
+        task.status = request.form['status']
 
         try:
             db.session.commit()
